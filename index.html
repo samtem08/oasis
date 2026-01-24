@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your luxury private retreat at Oasis – stunning vacation rental with pool, modern amenities, and perfect location. Direct bookings for the best rates.">
+    <meta name="keywords" content="Oasis vacation rental, luxury retreat, private pool rental, [Your Location] accommodation, direct booking villa">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Oasis Retreat">
+    <meta property="og:title" content="Oasis - Your Private Luxury Retreat">
+    <meta property="og:description" content="Escape to Oasis: private pool, modern amenities, unforgettable stays. Book direct for exclusive rates.">
+    <meta property="og:image" content="images/hero.jpg">
+    <meta property="og:url" content="https://www.youroasiswebsite.com">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.youroasiswebsite.com">
+
+    <title>Urban Oasis - Luxury Private Retreat | Vacation Rental in [Your Location]</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Header / Hero Section -->
+    <header class="navbar">
+      <div class="logo">Urban Oasis</div>
+      <nav>
+          <a href="rooms.html">Rooms</a>
+          <a href="amenities.html">Amenities</a>
+          <a href="booking.html">Book Now</a>
+          <a href="location.html">Location</a>
+      </nav>
+        <a href="booking.html">
+            <button class="reserve-btn">Reserve Now</button>
+        </a>
+
+        <!-- Hamburger Icon -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
+            <!-- Overlay -->
+            <div class="menu-overlay" id="menuOverlay"></div>
+  </header>
+ 
+
+  <section class="hero">
+      <div class="overlay"></div>
+  
+      <div class="hero-content">
+          <p class="welcome">WELCOME TO URBAN OASIS</p>
+          <h1>Modern Apartments for Rent in Killeen, TX</h1>
+          <p class="subtitle">
+            Comfortable, affordable living at 618 North College Street — minutes from Fort Cavazos.
+          </p>
+  
+          <div class="booking-box">
+              <div class="field">
+                  <label>Check-in</label>
+                  <input type="date">
+              </div>
+  
+              <div class="field">
+                  <label>Check-out</label>
+                  <input type="date">
+              </div>
+  
+              <div class="field">
+                  <label>Guests</label>
+                  <select>
+                    <option value=>Guests</option>
+                    <option value=>1</option>
+                    <option value=>2</option>
+                    <option value=>3</option>
+                    <option value=>4</option>
+                    <option value=>5</option>
+                    <option value=>6</option>
+                </select>
+    
+              </div>
+  
+              <button onclick="checkAvailability()">Check Availability</button>
+          </div>
+      </div>
+      
+  </section>
+    <section class="about">
+        <h2>Discover Urban Oasis Apartments</h2>
+        <p>
+            Urban Oasis Apartments provide modern, well-maintained rental homes in the heart of
+            Killeen, Texas. Our community is designed for comfort, convenience, and peace of mind.
+        </p>
+    </section>
+
+  <section class="highlights">
+        <div class="highlight"><i class="fas fa-map-marker-alt"></i> Prime Location</div>
+        <div class="highlight"><i class="fas fa-car"></i> Easy Parking</div>
+        <div class="highlight"><i class="fas fa-lock"></i> Secure & Quiet</div>
+        <div class="highlight"><i class="fas fa-users"></i> Family Friendly</div>
+
+    </section>
+  
+  
+  
+  <section class="rooms">
+    <p class="section-tag">ACCOMMODATIONS</p>
+    <h2>Our Rooms & Suites</h2>
+    <p class="section-subtitle">
+        Choose from our selection of thoughtfully designed spaces, each offering a unique blend of
+        comfort, style, and modern convenience.
+    </p>
+
+
+    <div class="filter-bar">
+        <select id="guestFilter">
+            <option value="all">Guests</option>
+            <option value="2">2 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="6">6 Guests</option>
+        </select>
+    
+        <select id="priceFilter">
+            <option value="all">Price</option>
+            <option value="low">Under $100</option>
+            <option value="mid">$100 – $200</option>
+            <option value="high">$200+</option>
+        </select>
+    </div>
+    
+    <div class="rooms-grid">
+
+        <!-- Standard Suite -->
+        <div class="room-card" data-guests="2" data-price="89">
+            <div class="room-image">
+                <span class="price">$89/night</span>
+                <img src="images/photo8.jpg" alt="Standard Suite">
+            </div>
+            <div class="room-content">
+                <h3>Standard Suite</h3>
+                <p class="desc">Cozy and comfortable, perfect for solo travelers or couples.</p>
+
+                <div class="room-meta">
+                    <span>👤 2 guests</span>
+                    <span>📐 450 sq ft</span>
+                </div>
+
+                <ul>
+                    <li>✔ Queen Bed</li>
+                    <li>✔ City View</li>
+                    <li>✔ Work Desk</li>
+                    <li>✔ En-suite Bath</li>
+                </ul>
+
+                <a href="booking.html">
+                    <button>Book This Room</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Deluxe Suite -->
+        <div class="room-card" data-guests="4" data-price="149">
+            <div class="room-image">
+                <span class="price">$149/night</span>
+                <img src="images/photo2.jpg" alt="Deluxe Suite">
+            </div>
+            <div class="room-content">
+                <h3>Deluxe Suite</h3>
+                <p class="desc">Spacious elegance with premium amenities for a luxurious stay.</p>
+
+                <div class="room-meta">
+                    <span>👤 4 guests</span>
+                    <span>📐 750 sq ft</span>
+                </div>
+
+                <ul>
+                    <li>✔ King Bed</li>
+                    <li>✔ Living Area</li>
+                    <li>✔ Balcony</li>
+                    <li>✔ Jacuzzi Tub</li>
+                </ul>
+
+                <a href="booking.html">
+                    <button>Book This Room</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Penthouse Suite -->
+        <div class="room-card" data-guests="6" data-price="299">
+            <div class="room-image">
+                <span class="price">$299/night</span>
+                <img src="images/photo7.jpg" alt="Penthouse Suite">
+            </div>
+            <div class="room-content">
+                <h3>Penthouse Suite</h3>
+                <p class="desc">Ultimate luxury with panoramic views and exclusive features.</p>
+
+                <div class="room-meta">
+                    <span>👤 6 guests</span>
+                    <span>📐 1200 sq ft</span>
+                </div>
+
+                <ul>
+                    <li>✔ 2 Bedrooms</li>
+                    <li>✔ Full Kitchen</li>
+                    <li>✔ Terrace</li>
+                    <li>✔ Concierge</li>
+                </ul>
+
+                <a href="booking.html">
+                    <button>Book This Room</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+  
+<section class="amenities">
+    <p class="section-tag">WHAT WE OFFER</p>
+    <h2>Premium Amenities</h2>
+    <p class="section-subtitle">
+        Every stay at Urban Oasis includes access to our full range of amenities,
+        designed to make your experience exceptional.
+    </p>
+
+    <div class="amenities-grid">
+
+        <div class="amenity-card" style="--delay: 0s">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 13a10 10 0 0 1 14 0"></path>
+                    <path d="M8.5 16.5a5 5 0 0 1 7 0"></path>
+                    <path d="M12 20h.01"></path>
+                </svg>
+            </div>
+            <h3>High-Speed WiFi</h3>
+            <p>Complimentary fiber-optic internet throughout the property</p>
+        </div>     
+
+        <div class="amenity-card" style="--delay: 0.1s">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 3h6a4 4 0 0 1 0 8H6z"></path>
+                    <path d="M6 11v10"></path>
+                </svg>        
+            </div>
+            <h3>Free Parking</h3>
+            <p>Secure covered parking for all guests</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.2s">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 10v4"></path>
+                    <path d="M20 10v4"></path>
+                    <path d="M8 8v8"></path>
+                    <path d="M16 8v8"></path>
+                </svg>                
+            </div>
+            <h3>Fitness Center</h3>
+            <p>24/7 access to fully equipped gym facilities</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.3s">
+            <div class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 8h13v7a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"></path>
+                    <path d="M16 10h2a2 2 0 0 1 0 4h-2"></path>
+                </svg>                
+            </div>
+            <h3>In-Room Coffee</h3>
+            <p>Premium coffee maker with locally roasted beans</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.4s">
+            <div class="icon">📺</div>
+            <h3>Smart TV</h3>
+            <p>55” Smart TV with streaming services included</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.5s">
+            <div class="icon">🌬️</div>
+            <h3>Climate Control</h3>
+            <p>Individual AC and heating for optimal comfort</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.6s">
+            <div class="icon">🛡️</div>
+            <h3>24/7 Security</h3>
+            <p>Round-the-clock security and keyless entry</p>
+        </div>
+
+        <div class="amenity-card" style="--delay: 0.7s">
+            <div class="icon">✨</div>
+            <h3>Daily Housekeeping</h3>
+            <p>Professional cleaning with eco-friendly products</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!--- Booking --->
+
+<section class="booking-section">
+    <p class="booking-tag">READY TO STAY?</p>
+    <h2>Book Your Stay</h2>
+    <p class="booking-desc">
+      Fill out the form below and we'll get back to you within 24 hours to confirm your reservation.
+    </p>
+  
+    <form class="booking-card" id="bookingForm">
+      <div class="form-grid">
+        <div class="field">
+          <label>Check-in Date</label>
+          <input type="date" name="checkin">
+        </div>
+  
+        <div class="field">
+          <label>Check-out Date</label>
+          <input type="date" name="checkout">
+        </div>
+  
+        <div class="field">
+          <label>Room Type</label>
+          <select name="room">
+            <option>Select a room</option>
+            <option value=>Standard Suite - $89</option>
+            <option value=>Deluxe Suite - $149</option>
+            <option value=>Penthouse Suite – $299</option>
+          </select>
+        </div>
+  
+        <div class="field">
+          <label>Number of Guests</label>
+          <select name="guests">
+            <option>Select guests</option>
+            <option value=>1 Guest</option>
+            <option value=>2 Guests</option>
+            <option value=>3 Guests</option>
+            <option value=>4 Guests</option>
+            <option value=>5 Guests</option>
+            <option value=>6 Guests</option>
+          </select>
+        </div>
+  
+        <div class="field">
+          <label>Full Name</label>
+          <input name="name" placeholder="John Doe">
+        </div>
+  
+        <div class="field">
+          <label>Email Address</label>
+          <input name="email" placeholder="john@example.com">
+        </div>
+  
+        <div class="field full">
+          <label>Phone Number</label>
+          <input name="phone" placeholder="+1 (555) 000-0000">
+        </div>
+      </div>
+  
+      <button type="submit" class="reserve-btn1">Complete Booking Request</button>
+  
+      <p class="terms">
+        By booking, you agree to our terms and conditions.
+        Free cancellation up to 48 hours before check-in.
+      </p>
+    </form>
+  </section>
+  
+
+
+
+<!-- Location -->
+
+<section class="location">
+    <p class="section-tag">FIND US</p>
+    <h2>Our Location</h2>
+    <p class="section-subtitle">
+        Conveniently located in the heart of Killeen, Texas, with easy access to local attractions,
+        dining, and entertainment.
+    </p>
+
+    <div class="location-wrapper">
+
+        <!-- MAP -->
+        <div class="map-card">
+            <iframe
+                src="https://www.google.com/maps?q=618%20North%20College%20Street,%20Killeen,%20TX&output=embed"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- INFO -->
+        <div class="location-info">
+
+            <div class="info-item" style="--delay:0s">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21s-6-5.3-6-10a6 6 0 1 1 12 0c0 4.7-6 10-6 10z"></path>
+                        <circle cx="12" cy="11" r="2.5"></circle>
+                    </svg>
+                </div>
+                <div>
+                    <h4>Address</h4>
+                    <p>
+                        618 North College Street<br>
+                        Killeen, TX 76541<br>
+                        United States
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-item" style="--delay:0.1s">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2
+                        19.8 19.8 0 0 1-8.6-3
+                        19.5 19.5 0 0 1-6-6
+                        19.8 19.8 0 0 1-3-8.6
+                        A2 2 0 0 1 4.1 2h3
+                        a2 2 0 0 1 2 1.7
+                        c.1.9.3 1.8.6 2.7
+                        a2 2 0 0 1-.5 2.1L8.1 9.9
+                        a16 16 0 0 0 6 6l1.4-1.4
+                        a2 2 0 0 1 2.1-.5
+                        c.9.3 1.8.5 2.7.6
+                        a2 2 0 0 1 1.7 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+1 (254) 555-1234</p>
+                </div>
+            </div>
+
+            <div class="info-item" style="--delay:0.2s">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16v16H4z"></path>
+                        <path d="M22 6l-10 7L2 6"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4>Email</h4>
+                    <p>hello@urbanoasis.com</p>
+                </div>
+            </div>
+
+            <div class="info-item" style="--delay:0.3s">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h4>Check-in / Check-out</h4>
+                    <p>
+                        Check-in: 3:00 PM<br>
+                        Check-out: 11:00 AM<br>
+                        Front Desk: 24/7
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About Section -->
+    <div class="footer-about reveal">
+      <h3>Urban Oasis</h3>
+      <p>Experience the perfect blend of urban convenience and tranquil comfort in the heart of Killeen, Texas.</p>
+      <div class="social-icons">
+        <!-- Facebook SVG -->
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.75c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.89h-2.3v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+        </a>
+        
+        <!-- Twitter SVG -->
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.34-1.6.56-2.46.66a4.3 4.3 0 001.88-2.38 8.58 8.58 0 01-2.71 1.03 4.28 4.28 0 00-7.29 3.9 12.16 12.16 0 01-8.83-4.48 4.27 4.27 0 001.33 5.7 4.23 4.23 0 01-1.94-.54v.05a4.28 4.28 0 003.43 4.2 4.28 4.28 0 01-1.93.07 4.28 4.28 0 003.99 2.97 8.57 8.57 0 01-5.31 1.83c-.34 0-.68-.02-1.01-.06a12.1 12.1 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19-.01-.37-.02-.56A8.66 8.66 0 0024 4.56a8.5 8.5 0 01-2.54.7z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links reveal">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms & Suites</a></li>
+        <li><a href="amenities.html">Amenities</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="location.html">Location</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact reveal">
+      <h4>Contact</h4>
+      <p>618 North College Street<br>Killeen, TX 76541</p>
+      <p>+1 (254) 555-1234</p>
+      <p>hello@urbanoasis.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom reveal">
+    <p>© 2026 Urban Oasis. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+
+    <script>
+        const form = document.getElementById("bookingForm");
+        const toast = document.getElementById("toast");
+        
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+        
+          const data = new FormData(this);
+        
+          const message = `
+        New Booking Request:
+        Check-in: ${data.get("checkin")}
+        Check-out: ${data.get("checkout")}
+        Room: ${data.get("room")}
+        Guests: ${data.get("guests")}
+        Name: ${data.get("name")}
+        Email: ${data.get("email")}
+        Phone: ${data.get("phone")}
+        `;
+        
+          
+          /* WHATSAPP */
+          const whatsappNumber = "+2348034549951";
+          window.open(
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+            "_blank"
+          );
+        
+          /* SHOW TOAST */
+          toast.classList.add("show");
+        
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 3000);
+        
+          this.reset();
+        });
+        </script>
+        
+
+
+
+    <div id="toast" class="toast">Booked ✓</div> 
+</body>
+</html>
+

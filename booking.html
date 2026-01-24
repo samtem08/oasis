@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your luxury stay at Urban Oasis – Easy online booking, secure payment, best rates guaranteed. Reserve your room in Killeen, TX today.">
+    <meta name="keywords" content="booking, reserve, luxury apartments, hotel booking, Killeen TX, secure booking, best rates">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Urban Oasis">
+    <meta property="og:title" content="Book Your Stay | Urban Oasis">
+    <meta property="og:description" content="Easy and secure booking at Urban Oasis. Reserve your perfect room today with guaranteed best rates.">
+    <meta property="og:image" content="images/hero.jpg">
+    <meta property="og:url" content="https://www.youroasiswebsite.com/booking.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.youroasiswebsite.com/booking.html">
+
+    <title>Book Your Stay | Urban Oasis - Luxury Apartments in Killeen, TX</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Urban Oasis</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="location.html">Location</a>
+        </nav>
+        <a href="booking.html">
+            <button class="reserve-btn">Reserve Now</button>
+        </a>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="booking-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Book Your Perfect Stay</h1>
+            <p class="subtitle">
+                Secure your luxury room at Urban Oasis with our simple and transparent booking process.
+            </p>
+        </div>
+    </section>
+
+    <!-- Booking Progress -->
+    <section class="booking-progress-section">
+        <div class="progress-container">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <div class="step-label">Select Dates</div>
+            </div>
+            <div class="progress-line active"></div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <div class="step-label">Choose Room</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-label">Guest Info</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">4</div>
+                <div class="step-label">Confirm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-form-section">
+        <div class="booking-container">
+            <!-- Left: Booking Form -->
+            <div class="booking-form-wrapper">
+                <h2>Reservation Details</h2>
+
+                <form class="booking-form" id="bookingForm">
+                    <!-- Step 1: Dates -->
+                    <div class="form-step active" id="step-1">
+                        <h3>Step 1: Select Your Dates</h3>
+
+                        <div class="form-group-double">
+                            <div class="form-group">
+                                <label for="checkin">Check-in Date</label>
+                                <input type="date" id="checkin" name="checkin" required>
+                                <p class="form-hint">Check-in from 3:00 PM</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="checkout">Check-out Date</label>
+                                <input type="date" id="checkout" name="checkout" required>
+                                <p class="form-hint">Check-out until 11:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nights">Number of Nights</label>
+                            <input type="number" id="nights" name="nights" value="1" min="1" readonly>
+                        </div>
+
+                        <button type="button" class="btn-next" onclick="nextStep()">Next: Choose Room →</button>
+                    </div>
+
+                    <!-- Step 2: Room Selection -->
+                    <div class="form-step" id="step-2">
+                        <h3>Step 2: Choose Your Room</h3>
+
+                        <div class="room-selection">
+                            <label class="room-option">
+                                <input type="radio" name="room" value="Standard Suite - $89/night" required>
+                                <div class="room-option-content">
+                                    <div class="room-option-header">
+                                        <h4>Standard Suite</h4>
+                                        <span class="room-price">$89/night</span>
+                                    </div>
+                                    <p>Perfect for solo travelers or couples. 450 sq ft with queen bed and city view.</p>
+                                    <div class="room-features">
+                                        <span><i class="fas fa-user"></i> 2 Guests</span>
+                                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                                        <span><i class="fas fa-tv"></i> Smart TV</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="room-option">
+                                <input type="radio" name="room" value="Deluxe Suite - $149/night" required>
+                                <div class="room-option-content">
+                                    <div class="room-option-header">
+                                        <h4>Deluxe Suite</h4>
+                                        <span class="room-price">$149/night</span>
+                                    </div>
+                                    <p>Spacious elegance with premium amenities. 750 sq ft with king bed, balcony, and living area.</p>
+                                    <div class="room-features">
+                                        <span><i class="fas fa-user"></i> 4 Guests</span>
+                                        <span><i class="fas fa-bath"></i> Jacuzzi</span>
+                                        <span><i class="fas fa-balcony"></i> Balcony</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label class="room-option">
+                                <input type="radio" name="room" value="Penthouse Suite - $299/night" required>
+                                <div class="room-option-content">
+                                    <div class="room-option-header">
+                                        <h4>Penthouse Suite</h4>
+                                        <span class="room-price">$299/night</span>
+                                    </div>
+                                    <p>Ultimate luxury with panoramic views. 1200 sq ft with 2 bedrooms, full kitchen, and terrace.</p>
+                                    <div class="room-features">
+                                        <span><i class="fas fa-user"></i> 6 Guests</span>
+                                        <span><i class="fas fa-crown"></i> Premium</span>
+                                        <span><i class="fas fa-concierge-bell"></i> Concierge</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-prev" onclick="prevStep()">← Back</button>
+                            <button type="button" class="btn-next" onclick="nextStep()">Next: Guest Info →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Guest Information -->
+                    <div class="form-step" id="step-3">
+                        <h3>Step 3: Your Information</h3>
+
+                        <div class="form-group-double">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+
+                        <div class="form-group-double">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country" placeholder="United States" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests (Optional)</label>
+                            <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests or needs?" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-prev" onclick="prevStep()">← Back</button>
+                            <button type="button" class="btn-next" onclick="nextStep()">Next: Confirm →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Confirmation -->
+                    <div class="form-step" id="step-4">
+                        <h3>Step 4: Review & Confirm</h3>
+
+                        <div class="summary-section">
+                            <h4>Booking Summary</h4>
+
+                            <div class="summary-row">
+                                <span>Check-in</span>
+                                <span id="summaryCheckin">—</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Check-out</span>
+                                <span id="summaryCheckout">—</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Number of Nights</span>
+                                <span id="summaryNights">—</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Room Type</span>
+                                <span id="summaryRoom">—</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Guest Name</span>
+                                <span id="summaryName">—</span>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Number of Guests</span>
+                                <span id="summaryGuests">—</span>
+                            </div>
+
+                            <hr>
+
+                            <div class="summary-row total">
+                                <span>Total Price</span>
+                                <span id="summaryTotal">$0</span>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-terms">
+                            <label>
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span>I agree to the terms and conditions and privacy policy</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" id="cancellationPolicy">
+                                <span>I understand the free cancellation policy up to 48 hours before check-in</span>
+                            </label>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn-prev" onclick="prevStep()">← Back</button>
+                            <button type="submit" class="btn-submit">Complete Booking</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right: Booking Summary Sidebar -->
+            <div class="booking-sidebar">
+                <div class="sidebar-card">
+                    <h3>Booking Summary</h3>
+
+                    <div class="summary-item">
+                        <span class="label">Check-in Date</span>
+                        <span class="value" id="sidebarCheckin">—</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Check-out Date</span>
+                        <span class="value" id="sidebarCheckout">—</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="label">Number of Nights</span>
+                        <span class="value" id="sidebarNights">—</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-item">
+                        <span class="label">Selected Room</span>
+                        <span class="value" id="sidebarRoom">Not selected</span>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Rate per night</span>
+                            <span id="ratePerNight">$0</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Number of nights</span>
+                            <span id="priceNights">1</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Taxes & fees</span>
+                            <span id="taxesFees">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="total-price">
+                        <span>Total Price</span>
+                        <span id="totalPrice">$0</span>
+                    </div>
+
+                    <div class="booking-benefits">
+                        <h4>Your Benefits</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Free Cancellation (48 hours)</li>
+                            <li><i class="fas fa-check"></i> Best Price Guarantee</li>
+                            <li><i class="fas fa-check"></i> Free WiFi & Parking</li>
+                            <li><i class="fas fa-check"></i> 24/7 Customer Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar-contact">
+                    <h4>Need Help?</h4>
+                    <p>Call us at <strong>(254) 555-1234</strong></p>
+                    <p>or email <strong>info@urbanoasis.com</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Book With Us -->
+    <section class="why-book">
+        <h2>Why Book With Urban Oasis?</h2>
+
+        <div class="why-book-grid">
+            <div class="why-book-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Best Price Guarantee</h3>
+                <p>If you find a lower price elsewhere, we'll match it and give you 10% off</p>
+            </div>
+
+            <div class="why-book-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Flexible Cancellation</h3>
+                <p>Free cancellation up to 48 hours before check-in, no questions asked</p>
+            </div>
+
+            <div class="why-book-card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Booking</h3>
+                <p>Your information is encrypted and protected with the latest security technology</p>
+            </div>
+
+            <div class="why-book-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our customer service team is available around the clock to assist you</p>
+            </div>
+
+            <div class="why-book-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Instant Confirmation</h3>
+                <p>Get an immediate booking confirmation via email with all details</p>
+            </div>
+
+            <div class="why-book-card">
+                <i class="fas fa-star"></i>
+                <h3>Loyalty Rewards</h3>
+                <p>Earn points with every booking and redeem for exclusive discounts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="booking-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is the check-in and check-out time?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Check-in is from 3:00 PM and check-out is until 11:00 AM. Early check-in and late check-out may be available upon request at no additional charge, subject to availability.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I cancel my booking?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, you can cancel for free up to 48 hours before your check-in date. Cancellations made within 48 hours will incur a charge of one night's accommodation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is parking included in my booking?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, complimentary parking is included with all room types. We offer secure, covered parking with 24/7 surveillance.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What amenities are included?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>All rooms include free high-speed WiFi, premium bedding, Smart TV, climate control, and daily housekeeping. Additional amenities vary by room type.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I modify my booking after confirmation?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, you can modify dates or room type up to 48 hours before check-in, subject to availability. Please contact our reservations team for changes.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you accept group bookings?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we offer special rates for group bookings of 5 or more rooms. Please contact our group sales team for more information and pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="booking-cta">
+        <h2>Ready to Reserve Your Room?</h2>
+        <p>Secure your stay at Urban Oasis with just a few clicks</p>
+        <button class="btn-cta">Start Booking Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Urban Oasis</h4>
+                <p>Your luxury apartment rental experience in Killeen, Texas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 618 North College Street, Killeen, TX</p>
+                <p><i class="fas fa-phone"></i> (254) 555-0123</p>
+                <p><i class="fas fa-envelope"></i> info@urbanoasis.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Urban Oasis. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Booking form functionality
+        let currentStep = 1;
+
+        function nextStep() {
+            if (validateStep()) {
+                currentStep++;
+                showStep(currentStep);
+                updateSummary();
+            }
+        }
+
+        function prevStep() {
+            currentStep--;
+            showStep(currentStep);
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            // Show current step
+            document.getElementById('step-' + step).classList.add('active');
+
+            // Update progress
+            document.querySelectorAll('.progress-step').forEach((el, idx) => {
+                el.classList.toggle('active', idx + 1 <= step);
+            });
+            document.querySelectorAll('.progress-line').forEach((el, idx) => {
+                el.classList.toggle('active', idx + 1 < step);
+            });
+
+            // Scroll to top
+            document.querySelector('.booking-form-wrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function validateStep() {
+            const inputs = document.getElementById('step-' + currentStep).querySelectorAll('input, select, textarea');
+            for (let input of inputs) {
+                if (input.hasAttribute('required') && input.type !== 'checkbox' && !input.value) {
+                    input.focus();
+                    input.style.borderColor = '#e06b3c';
+                    setTimeout(() => input.style.borderColor = '', 2000);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function updateSummary() {
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const room = document.querySelector('input[name="room"]:checked');
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const guests = document.getElementById('guests').value;
+
+            // Update sidebar
+            document.getElementById('sidebarCheckin').textContent = checkin || '—';
+            document.getElementById('sidebarCheckout').textContent = checkout || '—';
+            document.getElementById('sidebarRoom').textContent = room ? room.value : 'Not selected';
+
+            // Calculate total
+            if (checkin && checkout && room) {
+                const d1 = new Date(checkin);
+                const d2 = new Date(checkout);
+                const nights = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+                const pricePerNight = parseInt(room.value.match(/\$(\d+)/)[1]);
+                const subtotal = nights * pricePerNight;
+                const taxes = Math.round(subtotal * 0.1);
+                const total = subtotal + taxes;
+
+                document.getElementById('sidebarNights').textContent = nights;
+                document.getElementById('summaryNights').textContent = nights;
+                document.getElementById('ratePerNight').textContent = '$' + pricePerNight;
+                document.getElementById('priceNights').textContent = nights;
+                document.getElementById('taxesFees').textContent = '$' + taxes;
+                document.getElementById('totalPrice').textContent = '$' + total;
+                document.getElementById('summaryTotal').textContent = '$' + total;
+            }
+
+            // Update step 4 summary
+            document.getElementById('summaryCheckin').textContent = checkin || '—';
+            document.getElementById('summaryCheckout').textContent = checkout || '—';
+            document.getElementById('summaryRoom').textContent = room ? room.value : '—';
+            document.getElementById('summaryName').textContent = (firstName || '') + ' ' + (lastName || '') || '—';
+            document.getElementById('summaryGuests').textContent = guests || '—';
+        }
+
+        // Update on input change
+        document.getElementById('checkin')?.addEventListener('change', updateSummary);
+        document.getElementById('checkout')?.addEventListener('change', updateSummary);
+        document.querySelectorAll('input[name="room"]').forEach(el => el.addEventListener('change', updateSummary));
+        document.getElementById('firstName')?.addEventListener('input', updateSummary);
+        document.getElementById('lastName')?.addEventListener('input', updateSummary);
+        document.getElementById('guests')?.addEventListener('change', updateSummary);
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            alert('Booking confirmed! Confirmation details have been sent to ' + formData.get('email'));
+            // Here you would send the data to your backend
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

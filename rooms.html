@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our luxury apartment rooms at Urban Oasis – from cozy Standard Suites to exclusive Penthouse Suites in Killeen, TX. Direct bookings available.">
+    <meta name="keywords" content="Oasis rooms, luxury suites, apartment rentals, Standard Suite, Deluxe Suite, Penthouse, Killeen TX">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Urban Oasis">
+    <meta property="og:title" content="Our Rooms & Suites | Urban Oasis">
+    <meta property="og:description" content="Discover our range of luxury rooms and suites at Urban Oasis. Book your perfect stay today.">
+    <meta property="og:image" content="images/hero.jpg">
+    <meta property="og:url" content="https://www.youroasiswebsite.com/rooms.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.youroasiswebsite.com/rooms.html">
+
+    <title>Rooms & Suites | Urban Oasis - Luxury Apartments in Killeen, TX</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Urban Oasis</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="location.html">Location</a>
+        </nav>
+        <a href="booking.html">
+            <button class="reserve-btn">Reserve Now</button>
+        </a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Overlay -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="rooms-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Our Rooms & Suites</h1>
+            <p class="subtitle">
+                Choose from our selection of thoughtfully designed spaces, each offering a unique blend of
+                comfort, style, and modern convenience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms">
+        <p class="section-tag">ACCOMMODATIONS</p>
+        <h2>Find Your Perfect Room</h2>
+        <p class="section-subtitle">
+            Each room at Urban Oasis is designed with your comfort in mind, featuring premium amenities 
+            and stunning views of Killeen.
+        </p>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <select id="guestFilter">
+                <option value="all">All Guests</option>
+                <option value="2">2 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="6">6 Guests</option>
+            </select>
+
+            <select id="priceFilter">
+                <option value="all">All Prices</option>
+                <option value="low">Under $100</option>
+                <option value="mid">$100 – $200</option>
+                <option value="high">$200+</option>
+            </select>
+
+            <select id="sizeFilter">
+                <option value="all">All Sizes</option>
+                <option value="small">Under 600 sq ft</option>
+                <option value="medium">600 – 900 sq ft</option>
+                <option value="large">900+ sq ft</option>
+            </select>
+        </div>
+
+        <!-- Rooms Grid -->
+        <div class="rooms-grid">
+
+            <!-- Standard Suite -->
+            <div class="room-card" data-guests="2" data-price="89" data-size="450">
+                <div class="room-image">
+                    <span class="price">$89/night</span>
+                    <span class="badge">Popular</span>
+                    <img src="images/photo8.jpg" alt="Standard Suite">
+                </div>
+                <div class="room-content">
+                    <h3>Standard Suite</h3>
+                    <p class="desc">Cozy and comfortable, perfect for solo travelers or couples. Our Standard Suite offers all the essentials for a pleasant stay.</p>
+
+                    <div class="room-meta">
+                        <span><i class="fas fa-user"></i> 2 guests</span>
+                        <span><i class="fas fa-ruler-combined"></i> 450 sq ft</span>
+                    </div>
+
+                    <div class="features">
+                        <h4>Room Features:</h4>
+                        <ul>
+                            <li>✔ Queen Bed</li>
+                            <li>✔ City View</li>
+                            <li>✔ Work Desk</li>
+                            <li>✔ En-suite Bathroom</li>
+                            <li>✔ Air Conditioning</li>
+                            <li>✔ Flat-screen TV</li>
+                        </ul>
+                    </div>
+
+                    <button class="book-btn" onclick="bookRoom('Standard Suite', 89)">Book This Room</button>
+                </div>
+            </div>
+
+            <!-- Deluxe Suite -->
+            <div class="room-card" data-guests="4" data-price="149" data-size="750">
+                <div class="room-image">
+                    <span class="price">$149/night</span>
+                    <span class="badge" style="background: #c4a747;">Featured</span>
+                    <img src="images/photo2.jpg" alt="Deluxe Suite">
+                </div>
+                <div class="room-content">
+                    <h3>Deluxe Suite</h3>
+                    <p class="desc">Spacious elegance with premium amenities for a luxurious stay. Perfect for families or those seeking extra comfort and space.</p>
+
+                    <div class="room-meta">
+                        <span><i class="fas fa-user"></i> 4 guests</span>
+                        <span><i class="fas fa-ruler-combined"></i> 750 sq ft</span>
+                    </div>
+
+                    <div class="features">
+                        <h4>Room Features:</h4>
+                        <ul>
+                            <li>✔ King Bed + Sofa</li>
+                            <li>✔ Living Area</li>
+                            <li>✔ Private Balcony</li>
+                            <li>✔ Jacuzzi Tub</li>
+                            <li>✔ Full Kitchen</li>
+                            <li>✔ Premium Toiletries</li>
+                        </ul>
+                    </div>
+
+                    <button class="book-btn" onclick="bookRoom('Deluxe Suite', 149)">Book This Room</button>
+                </div>
+            </div>
+
+            <!-- Penthouse Suite -->
+            <div class="room-card" data-guests="6" data-price="299" data-size="1200">
+                <div class="room-image">
+                    <span class="price">$299/night</span>
+                    <span class="badge" style="background: #d4af37;">Luxury</span>
+                    <img src="images/photo7.jpg" alt="Penthouse Suite">
+                </div>
+                <div class="room-content">
+                    <h3>Penthouse Suite</h3>
+                    <p class="desc">Ultimate luxury with panoramic views and exclusive features. Our flagship suite offers unparalleled comfort and sophistication.</p>
+
+                    <div class="room-meta">
+                        <span><i class="fas fa-user"></i> 6 guests</span>
+                        <span><i class="fas fa-ruler-combined"></i> 1200 sq ft</span>
+                    </div>
+
+                    <div class="features">
+                        <h4>Room Features:</h4>
+                        <ul>
+                            <li>✔ 2 Bedrooms</li>
+                            <li>✔ Full Kitchen</li>
+                            <li>✔ Private Terrace</li>
+                            <li>✔ Concierge Service</li>
+                            <li>✔ Spa Bathroom</li>
+                            <li>✔ Premium Sound System</li>
+                        </ul>
+                    </div>
+
+                    <button class="book-btn" onclick="bookRoom('Penthouse Suite', 299)">Book This Room</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Amenities Highlight Section -->
+    <section class="room-amenities">
+        <p class="section-tag">WHAT'S INCLUDED</p>
+        <h2>Premium Amenities in Every Room</h2>
+
+        <div class="amenities-grid-rooms">
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-wifi"></i></div>
+                <h3>High-Speed WiFi</h3>
+                <p>Complimentary fiber-optic internet throughout</p>
+            </div>
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-coffee"></i></div>
+                <h3>Premium Coffee</h3>
+                <p>Locally roasted coffee maker in every room</p>
+            </div>
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-tv"></i></div>
+                <h3>Smart TV</h3>
+                <p>55" Smart TV with streaming services included</p>
+            </div>
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-wind"></i></div>
+                <h3>Climate Control</h3>
+                <p>Individual AC and heating control</p>
+            </div>
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h3>Smart Lock</h3>
+                <p>Secure keyless entry system</p>
+            </div>
+
+            <div class="amenity-card-room">
+                <div class="icon"><i class="fas fa-shower"></i></div>
+                <h3>Premium Bath</h3>
+                <p>Luxury toiletries & rainfall shower</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="room-comparison">
+        <h2>Quick Comparison</h2>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Standard Suite</th>
+                        <th>Deluxe Suite</th>
+                        <th>Penthouse Suite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Max Guests</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Square Footage</td>
+                        <td>450 sq ft</td>
+                        <td>750 sq ft</td>
+                        <td>1200 sq ft</td>
+                    </tr>
+                    <tr>
+                        <td>Bedrooms</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Kitchen</td>
+                        <td>Kitchenette</td>
+                        <td>Full Kitchen</td>
+                        <td>Full Kitchen</td>
+                    </tr>
+                    <tr>
+                        <td>Outdoor Space</td>
+                        <td>—</td>
+                        <td>Balcony</td>
+                        <td>Private Terrace</td>
+                    </tr>
+                    <tr>
+                        <td>Price Per Night</td>
+                        <td>$89</td>
+                        <td>$149</td>
+                        <td>$299</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="rooms-cta">
+        <div class="cta-content">
+            <h2>Ready to Book Your Stay?</h2>
+            <p>Reserve your room today and experience the comfort and luxury of Urban Oasis</p>
+            <button class="reserve-btn" onclick="document.querySelector('.reserve-btn').click()">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Urban Oasis</h4>
+                <p>Your luxury apartment rental experience in Killeen, Texas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 618 North College Street, Killeen, TX</p>
+                <p><i class="fas fa-phone"></i> (254) 555-0123</p>
+                <p><i class="fas fa-envelope"></i> info@urbanoasis.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Urban Oasis. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Room filtering functionality
+        const guestFilter = document.getElementById("guestFilter");
+        const priceFilter = document.getElementById("priceFilter");
+        const sizeFilter = document.getElementById("sizeFilter");
+        const rooms = document.querySelectorAll(".room-card");
+
+        function filterRooms() {
+            const selectedGuests = guestFilter.value;
+            const selectedPrice = priceFilter.value;
+            const selectedSize = sizeFilter.value;
+
+            rooms.forEach(room => {
+                const guests = room.getAttribute("data-guests");
+                const price = parseInt(room.getAttribute("data-price"));
+                const size = parseInt(room.getAttribute("data-size"));
+
+                let showGuests = selectedGuests === "all" || guests === selectedGuests;
+                let showPrice = selectedPrice === "all" || 
+                    (selectedPrice === "low" && price < 100) ||
+                    (selectedPrice === "mid" && price >= 100 && price <= 200) ||
+                    (selectedPrice === "high" && price > 200);
+                let showSize = selectedSize === "all" ||
+                    (selectedSize === "small" && size < 600) ||
+                    (selectedSize === "medium" && size >= 600 && size <= 900) ||
+                    (selectedSize === "large" && size > 900);
+
+                if (showGuests && showPrice && showSize) {
+                    room.style.display = "block";
+                    setTimeout(() => room.classList.add("show"), 10);
+                } else {
+                    room.classList.remove("show");
+                    setTimeout(() => room.style.display = "none", 300);
+                }
+            });
+        }
+
+        guestFilter.addEventListener("change", filterRooms);
+        priceFilter.addEventListener("change", filterRooms);
+        sizeFilter.addEventListener("change", filterRooms);
+
+        // Book room function
+        function bookRoom(roomName, price) {
+            alert(`Booking ${roomName} at $${price}/night... (Redirect to booking page)`);
+            // window.location.href = "booking.html";
+        }
+    </script>
+</body>
+
+</html>
